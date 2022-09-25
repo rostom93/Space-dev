@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a launch by name">
+    </div>
+  <div class="card-group">
+    <div class="card" style="display: flex;flex: 0 1 33%;" *ngFor = "let item of data.slice(x,y) | filter:searchText; let i = index">
+      <div>
+      <img class="card-img-top card-image" src="{{item.image}}" alt="Card image cap" routerLink="lanches-details" *ngIf="item.image != null">
+      <img class="card-img-top card-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSnTNrsPaOrbeJg7WE_yWzeRk_6Feekh345QE1518_jWyx9JvFqM1ATVRYh5gnhMGi3q0&usqp=CAU" alt="Card image cap" routerLink="lanches-details" *ngIf="item.image == null">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Launche's name</h5>
+        <h5 class="card-title">{{item.name}}</h5>
+        <h5 class="card-title">status :</h5>
+        <h3 class="card-title">{{item.status.name}}</h3>
+        <h5 class="card-title">Status's Description</h5>
+        <p class="card-text">{{item.status.description}}</p>
+        <p class="card-text"><small class="text-muted">window start :  {{item.window_start | date: 'dd/MM/yyyy'}}</small></p>
+        <p class="card-text"><small class="text-muted">window end : {{item.window_end | date: 'dd/MM/yyyy'}}</small></p>
+        <p class="card-text"><small class="text-muted">Last updated {{item.last_updated | date: 'dd/MM/yyyy'}}</small></p>
+        <button class="btn btn-secondary" routerLink="lanches-details">Show more</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination" style="justify-content: center;">
+      <li class="page-item"><a class="page-link" (click)="showPrevious()">Previous</a></li>
+      <li class="page-item"><a class="page-link" (click)="showNext()">Next</a></li>
+    </ul>
+  </nav>
+</div>

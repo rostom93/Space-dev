@@ -1,0 +1,16 @@
+.welcome-title {
+    color: rgb(27, 53, 138);
+
+}
+
+.card-image {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card-image:hover{
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
