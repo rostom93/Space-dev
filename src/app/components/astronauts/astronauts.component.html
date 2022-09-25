@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="card-group">
+    <div class="card" style="display: flex;flex: 0 1 33%;" *ngFor="let astro of listOfAstro.slice(0,9); let i = index">
+      <div>
+        <img class="card-img-top card-image" src="{{astro.profile_image}}" alt="Card image cap" (click)="navigate(astro.url)">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Astro's name</h5>
+        <h5 class="card-title">{{astro.name}}</h5>
+        <button class="btn btn-info" (click)="navigate(astro.url)">Show more</button>
+      </div>
+    </div>
+  </div>
+</div>

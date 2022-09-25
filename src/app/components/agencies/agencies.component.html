@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+          List of Agency 
+        </div>
+        <div class="card-body" *ngFor = "let agency of listOfAgencies">
+            <img class="card-img-top card-image" src="{{agency.image_url}}" alt="Card image cap" *ngIf="agency.image_url">
+            <img class="card-img-top card-image" src="https://www.feednavigator.com/var/wrbm_gb_food_pharma/storage/images/9/2/8/5/235829-6-eng-GB/Feed-Test-SIC-Feed-20142.jpg" alt="Card image cap" *ngIf="agency.image_url == null">
+          <h5 class="card-title">Agency's Name : {{agency.name}}</h5>
+          <p class="card-title">description : </p>
+          <p class="card-text">{{agency.description}}</p>
+          <p class="card-title">Country : {{agency.country_code}}</p>
+          <p class="card-text">Founding Year : {{agency.founding_year}} </p>
+        </div>
+      </div>
+</div>
